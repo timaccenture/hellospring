@@ -15,4 +15,10 @@ public class PersonRepository {
     public List<Person> findAll(){
         return list;
     }
+
+    public Person findById(Long id){
+        return list.stream()
+                .filter(p -> p.getId().equals(id))
+                .findFirst().orElseThrow(() -> new RuntimeException("Person not found"));
+    }
 }

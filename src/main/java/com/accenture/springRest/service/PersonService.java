@@ -7,4 +7,6 @@ import java.util.List;
 public interface PersonService {
     void create(Person person);
     List<Person> fillAll();
+
+    Person getById(Long id);
 }

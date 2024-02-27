@@ -19,7 +19,7 @@ public class GreetingController {
     }
 
     @GetMapping("/api/message/v1") //request param muss mit ? hinter die url gehängt werden ie ./api/message/v1?name=Susi
-    public ResponseEntity<String> getMessage(@RequestParam(name = "test", required = false) String name){ //hier ./api/message/v1?test =Susi
+    public ResponseEntity<String> getMessage(@RequestParam(name = "test", required = false) String name){ //hier ./api/message/v1?test=Susi
         String message = Objects.nonNull(name) ?
                 greetingServiceImpl.message(name) :
                 greetingServiceImpl.message();

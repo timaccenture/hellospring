@@ -29,4 +29,11 @@ public class PersonServiceImpl implements PersonService {
         List<Person> persons = personRepository.findAll();
         return persons.stream().sorted(Comparator.comparing(Person::getFirstName)).toList();
     }
+
+    @Override
+    public Person getById(Long id) {
+        return personRepository.findById(id);
+    }
+
+
 }
